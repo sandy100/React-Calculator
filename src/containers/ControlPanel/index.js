@@ -8,6 +8,7 @@ export const showHistory = dispatch => dispatch(toggleHistory());
 export const removeOneChar = (dispatch, getState) => {
     const curExpression = String(getState().curExpression);
     const newExpWithRemovedChar = curExpression.toString().trim().substring(0, (curExpression.length - 1));
+
     dispatch(updateExpression(newExpWithRemovedChar === '' ? 0 : newExpWithRemovedChar));
 }
 
